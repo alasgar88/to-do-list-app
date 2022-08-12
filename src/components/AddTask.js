@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { addTask } from "../features/task/taskSlice";
 
 const AddItem = () => {
-  const [name, setName] = useState();
+  const [name, setName] = useState("");
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
