@@ -15,8 +15,8 @@ const Task = ({ id, name, hasDone }) => {
           <button className='btn garbage'>
             <RiDeleteBin6Line
               style={{
-                width: "22px",
-                height: "22px",
+                width: "24px",
+                height: "24px",
                 color: "#FF542F",
               }}
               onClick={() => {
