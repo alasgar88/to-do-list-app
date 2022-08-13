@@ -4,6 +4,7 @@ import { MdAddBox } from "react-icons/md";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTask } from "../features/task/taskSlice";
+import { toast } from "react-toastify";
 
 const AddItem = () => {
   const [name, setName] = useState("");
@@ -12,12 +13,14 @@ const AddItem = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name) {
+      toast.error("Task əlavə edilmədi");
       return;
     }
     const id = nextId();
     const hasDone = false;
     const newTask = { id, name, hasDone };
     dispatch(addTask(newTask));
+    toast.success("Task uğurla əlavə edildi");
     setName("");
   };
 
