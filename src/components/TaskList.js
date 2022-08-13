@@ -4,6 +4,7 @@ import SingleTask from "./SingleTask";
 import NoResults from "./NoResults";
 import AddTask from "./AddTask";
 import { clearAllTask } from "../features/task/taskSlice";
+import { toast } from "react-toastify";
 
 const TaskList = () => {
   const { allTask, doneTask, generalTask } = useSelector((state) => state.task);
@@ -36,7 +37,10 @@ const TaskList = () => {
         <div className='clear-all'>
           <span
             className='clear-all-btn'
-            onClick={() => dispatch(clearAllTask())}
+            onClick={() => {
+              dispatch(clearAllTask());
+              toast.success("Bütün tasklar uğurla silindi");
+            }}
           >
             Hamısını sil
           </span>
