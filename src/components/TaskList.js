@@ -35,15 +35,17 @@ const TaskList = () => {
           <span className='doneTask'>{`Hazır: ${doneTask} tapşırıq`}</span>
         </div>
         <div className='clear-all'>
-          <span
-            className='clear-all-btn'
-            onClick={() => {
-              dispatch(clearAllTask());
-              toast.success("Bütün tasklar uğurla silindi");
-            }}
-          >
-            Hamısını sil
-          </span>
+          {generalTask ? (
+            <span
+              className='clear-all-btn'
+              onClick={() => {
+                dispatch(clearAllTask());
+                toast.success("Bütün tasklar uğurla silindi");
+              }}
+            >
+              Hamısını sil
+            </span>
+          ) : null}
         </div>
       </div>
     </div>
