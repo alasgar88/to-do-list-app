@@ -24,7 +24,7 @@ const taskSlice = createSlice({
     },
     compleateTask: (state, { payload }) => {
       const singleTask = state.allTask.find((item) => {
-        return item.id == payload;
+        return item.id === payload;
       });
       singleTask.hasDone = !singleTask.hasDone;
     },
