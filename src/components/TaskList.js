@@ -35,17 +35,15 @@ const TaskList = () => {
           <span className='doneTask'>{`Hazır: ${doneTask} tapşırıq`}</span>
         </div>
         <div className='clear-all'>
-          {generalTask ? (
             <span
               className='clear-all-btn'
               onClick={() => {
                 dispatch(clearAllTask());
-                toast.success("Bütün tasklar uğurla silindi");
+                generalTask ?  toast.success("Bütün tasklar uğurla silindi") : toast.error("Tasklar mövcud deyil")
               }}
             >
               Hamısını sil
             </span>
-          ) : null}
         </div>
       </div>
     </div>
