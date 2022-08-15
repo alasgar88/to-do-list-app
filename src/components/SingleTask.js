@@ -24,7 +24,7 @@ const Task = ({ id, name, hasDone }) => {
           onMouseOut={handleMouseOut}
         >
           <input
-            checked = {hasDone}
+            defaultChecked={hasDone}
             type='checkbox'
             onClick={() => {
               dispatch(compleateTask(id));
