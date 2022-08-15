@@ -18,7 +18,7 @@ function App() {
     <div className='app'>
       <Header />
       <TaskList />
-      <ToastContainer position='top-center' autoClose={1500}/>
+      <ToastContainer position='top-right' autoClose={1500} />
     </div>
   );
 }
